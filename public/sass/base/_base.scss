@@ -13,7 +13,7 @@ html{
   
   @include respond(phone){
     font-size: 43.75%;// 1rem = 7px; 8/16
-    letter-spacing: .05;
+    letter-spacing: .02;
   }
   @include respond(tab-port){
     font-size: 50%;// 1rem = 8px; 8/16
