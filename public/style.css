@@ -10,6 +10,10 @@ html {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 100;
   letter-spacing: .15rem; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%;
+      letter-spacing: .05; } }
   @media (max-width: 56.25em) {
     html {
       font-size: 50%;

@@ -11,6 +11,10 @@ html{
   font-weight: 100;
   letter-spacing: .15rem;
   
+  @include respond(phone){
+    font-size: 50%;// 1rem = 7px; 8/16
+    letter-spacing: .05;
+  }
   @include respond(tab-port){
     font-size: 50%;// 1rem = 8px; 8/16
     letter-spacing: .05;
