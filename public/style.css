@@ -98,7 +98,7 @@ form {
   padding: .5rem 2rem; }
   @media (max-width: 37.5em) {
     .column--cells {
-      padding: .5rem 1.5rem; } }
+      padding: .5rem 1rem; } }
 
 #table_header {
   padding: 2rem 1rem; }
