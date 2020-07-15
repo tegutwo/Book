@@ -77,6 +77,9 @@ h1 {
   letter-spacing: 2px;
   vertical-align: middle;
   font-size: 2.5rem; }
+  @media (max-width: 37.5em) {
+    #calendar {
+      font-size: 2rem; } }
 
 tr {
   padding: 4rem 5rem;
@@ -93,6 +96,9 @@ form {
   cursor: pointer;
   text-align: center;
   padding: .5rem 2rem; }
+  @media (max-width: 37.5em) {
+    .column--cells {
+      padding: .5rem 1.5rem; } }
 
 #table_header {
   padding: 2rem 1rem; }
