@@ -10,9 +10,11 @@
     }
     @include respond(tab-port){
       padding: 2rem 5rem;
+      text-align: center;
     }
     @include respond(phone){
      padding: 2rem 6rem;
+     text-align: center;
     }
   }
   .page_header{
