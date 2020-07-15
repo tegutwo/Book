@@ -351,8 +351,8 @@ form {
   padding: 1rem; }
 
 .select_label {
-  display: block;
-  text-align: left;
+  display: inline-block;
+  text-align: center;
   padding: .5rem;
   margin-top: 2rem;
   font-size: 1.8rem; }
