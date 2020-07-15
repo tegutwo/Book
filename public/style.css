@@ -49,6 +49,14 @@ body {
   height: 100vh;
   overflow: scroll; }
 
+@media (max-width: 56.25em) {
+  .Booker_form {
+    padding: 2rem 5rem; } }
+
+@media (max-width: 37.5em) {
+  .Booker_form {
+    padding: 2rem 6rem; } }
+
 .page_header {
   text-align: center;
   padding: 3rem 1rem;

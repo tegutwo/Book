@@ -1,6 +1,19 @@
 .BOOKER{
     height: 100vh;
     overflow: scroll;
+
+  }
+  .Booker_form{
+
+    @include respond(tab-land){
+
+    }
+    @include respond(tab-port){
+      padding: 2rem 5rem;
+    }
+    @include respond(phone){
+     padding: 2rem 6rem;
+    }
   }
   .page_header{
     text-align: center;
