@@ -61,6 +61,7 @@
     }
     @include respond(tab-port){
         width: 100% !important;
+        
         float: none;
     }
 }
