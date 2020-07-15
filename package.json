@@ -1,0 +1,19 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "compile-sass": "node-sass public/sass/main.scss public/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tegutwo/Book.git"
+  },
+  "author": "Alvin Tegutwo",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

@@ -1,0 +1,31 @@
+.hair{
+    
+    text-align: initial;
+    &_list{
+        &--details{
+            margin-top: 9rem;
+        padding: .5rem;
+        margin-left: 3rem;
+        }
+        &--form{
+            margin-top: 6.5rem;
+        }      
+    }
+   }
+   .hair_details{
+     /* list-style: none; */
+     padding: .2rem;
+     list-style: none;
+   }
+   .hair_details--header{
+   color: #c3073F;
+   font-weight: 700;
+   text-transform: uppercase;
+   
+   }
+   .hair_details--message{
+     padding: .4rem 0;
+     margin: .2rem 0;
+     text-align: center;
+     
+   }

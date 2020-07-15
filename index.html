@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOK</title>
+        <link rel="stylesheet" type="text/css" href="public/style.css">
+        <link rel="stylesheet" type="text/css" href="layout.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+<body>
+    <section id="Hair" class="">
+        <div class="page_header">
+            <h1>What Hair Would You Like?    
+                <!-- <span class="index index--closed">Closed</span> <span class="index index--open">Open</span> -->
+            </h1>
+        </div>
+        <div class="row">
+          
+            <div class="col-2-of-3">
+                <div class="hair_list--details">
+                    <div class="row">
+                        <ul id="faux-locs" class="col-1-of-2 hair">
+                            <li class="hair_details hair_details--header">Faux Locs</li>
+    
+                            <li class="hair_details">Length: Short, Mid-Back, Long</li>
+                            <li class="hair_details">Color: Choice</li>
+                        </ul>
+                        <ul id="distress-locs" class="col-1-of-2 hair">
+                            <li class="hair_details hair_details--header">Distress Locs</li>
+    
+                            <li class="hair_details">Length: Short, Mid-Back, Long</li>
+                            <li class="hair_details">Color: Black, Brown</li>
+                        </ul>
+                    </div>
+                   <div class="row">
+                    <ul id="kinky-wavy" class="col-1-of-2 hair">
+                        <li class="hair_details hair_details--header">Kinky Wavy</li>
+
+                        <li class="hair_details">Length: Short, Mid-Back, Long</li>
+                        <li class="hair_details">Color: Black, Brown</li>
+                    </ul>
+           
+                <ul id="boho-locs" class="col-1-of-2 hair">
+                    <li class="hair_details hair_details--header">Bohemian Locs</li>
+                    <li class="hair_details">Length: Short, Mid-Back, Long</li>
+                    <li class="hair_details">Color: Black, Brown</li>
+                </ul>
+                   </div>
+                    <div class="row">
+                        <ul id="reggae-locs" class="col-1-of-2 hair">
+                            <li class="hair_details hair_details--header">Reggae Locs</li>
+    
+                            <li class="hair_details">Length: Short, Mid-Back, Long</li>
+                            <li class="hair_details">Color: Black, Brown</li>
+                        </ul>
+                        <ul id="super-dread" class="col-1-of-2 hair">
+                            <li class="hair_details hair_details--header">Super Dread</li>
+    
+                            <li class="hair_details">Length: Short, Mid-Back, Long</li>
+                            <li class="hair_details">Color: Black, Brown</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        
+            <div class="col-1-of-3">
+                <div class="hair_list--form"></div>
+            <form action="#" method="POST">
+                <label for="style" class="select_label">Style</label>
+               <select name="styles" id="style" class="select">
+                   <option value="Faux Locs">Faux Locs</option>
+                   <option value="Bohemian Locs">Bohemian Locs</option>
+                   <option value="super-dread">super-dread</option>
+                   <option value="kinky-wavy">kinky-wavy</option>
+                   <option value="Reggae Locs">Reggae Locs</option>
+                   <option value="Distress Locs">Distress Locs</option>
+               </select>
+               <label for="length" class="select_label">Length</label>
+               <select name="length" id="length" class="select">
+                   <option value="Short">Short</option>
+                   <option value="Mid-Back">Mid-Back</option>
+                   <option value="Long">Long</option>
+               </select>
+               <label for="Color" class="select_label">Color</label>
+               <select name="Color" id="Color" class="select">
+                   <option value="Black #1">Black #1</option>
+                   <option value="Black #2">Black #2</option>
+                   <option value="Brown">Brown</option>
+               </select>
+               <!-- <label for="Color" class="select_label">Color:</label>
+               <input type="text" id="Color" class="select"> -->
+
+            </form>
+            <div class="btn_layout--adjacent"><a href="#" class="btn btn_back--hair">Back</a></div> <div class="btn_layout--adjacent"><a href="#" class="btn btn_next--hair">Next</a></div>
+            </div> 
+        </div>
+        </div>
+       
+    </section>
+    <section class="BOOKER hide">
+    <div class="page_header">
+        <h1>Choose A date:    
+            <!-- <span class="index index--closed">Closed</span> <span class="index index--open">Open</span> -->
+        </h1>
+    </div>
+    <div class="row">
+    <div class="col-2-of-3">
+        <table id="calendar">
+            <thead id="calendar_header">
+                <tr class="calendar_header--name" >
+                    <th class=" month month--previous">&nbsp;&nbsp;</th>
+                   <th colspan="5" id="table_header" > BOOM</th> 
+                   <th  class="month month--next">&nbsp;&nbsp;</th>
+                </tr>
+                <tr class="table_row">
+                    <th class="column column--headers" scope="col">Sun</th>
+                    <th class="column column--headers" scope="col">Mon</th>
+                    <th class="column column--headers" scope="col">Tue</th>
+                    <th class="column column--headers" scope="col">Wed</th>
+                    <th class="column column--headers" scope="col">Thur</th>
+                    <th class="column column--headers" scope="col">Fri</th>
+                    <th class="column column--headers" scope="col"> Sat</th>
+                </tr>
+                
+            </thead>
+            <tbody id="calendar_body">
+                
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="col-1-of-3" >
+          <p class="header_tertiary"><span class="span span_month">January</span> <span class="span span_year">2020</span></p>
+          <form action="#" style="vertical-align: middle;">
+        <label for="date" class="date">Day:</label><br>
+        <input id="date" type="text" name="year" value="Please Choose a date" readonly autofocus>
+        <div class="time_div" >
+            <span style="margin-right: 3rem; display: block; color: #c3073F;">Time: </span><br/>
+        <div  class="input_holder"> 
+        <input class="radio" id= "Morning" type="radio" name="time" checked="checked">
+         <label class="radio_labels" for="Morning"><span class="radio_btn">&nbsp;</span> Morning</label>
+        </div>
+        
+         <div class="input_holder">
+            <input class="radio" id= "Evening" type="radio" name="time" >
+            <label class="radio_labels" for="Evening"><span class="radio_btn">&nbsp;</span> Evening</label>
+         </div>
+        
+        </div>
+       </form>
+     <div class="btn_layout--adjacent"><a href="#" class="btn btn_Booker--back">Back</a></div><div class="btn_layout--adjacent"><a href="#" class="btn btn_Booker--next">Next</a></div>
+        <!-- <form class="input" >
+            <div class="input_label input_label--date">
+                <label for="date" class="date"> YEAR:</label>
+                <input id="date" type="text" name="year">
+            </div>
+            <div class="input_label input_label--date">
+                <label for="date" class="date"> MONTH:</label>
+                <input id="date" type="text" name="month">
+            </div>
+            <div class="input_label input_label--date">
+                <label for="date" class="date"> DAY:</label>
+                <input id="date" type="text" name="day">
+            </div>
+            <div class="input_label input_label--radio" style="margin-top: 5rem;">
+             <input id = "Morning" type="radio" name="time" value=1 checked="checked">
+            <label for = "Morning" > <span class="radio_button"></span> <span class="span_text">Morning</span></label >
+            </div>
+            <div class="input_label input_label--radio"  style="margin-bottom: 5rem;">
+             <input id ="Evening"type="radio" name="time" value=2 >
+            <label for="Evening"> <span class="radio_button"></span> <span class="span_text">Evening</span></label >
+            </div>
+            <a href="#" class="btn btn--book">NEXT</a>
+        </form> -->
+    </div>
+</div>
+    </section>
+    <section id="dialog" class="hide">
+        <div class="dialog_box dialog">
+        <a href="#" class="btn  btn_dialog btn_dialog--Back">Back</a>
+        <a href="#" class="btn btn_dialog btn_dialog--confirm">Confirm</a>
+        </div>
+        
+        
+    </section>
+    <section id="contacts" class="contacts hide">
+        <form action="#" method="post" class="contacts_form">
+            <label for="FullName" class="contacts_label">Full Name</label>
+            <input type="text" name="FullName" id="FullName"  class="contacts_input" autofocus>
+            <label for="Number" class="contacts_label">Number</label>
+            <input type="tel" name="Number" id="Number" class="contacts_input" >
+            <label for="Email" class="contacts_label">Email</label>
+            <input type="email" name="Email" id="Email" class="contacts_input" >
+            <a href="#" class="btn btn_dialog btn_dialog--confirm">Next</a>
+        </form>
+    </section>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD8SXgM6h-eBRF_EwQHVvNGohixuMAhGqA",
+    authDomain: "booking-system-de6d9.firebaseapp.com",
+    databaseURL: "https://booking-system-de6d9.firebaseio.com",
+    projectId: "booking-system-de6d9",
+    storageBucket: "booking-system-de6d9.appspot.com",
+    messagingSenderId: "1066975642179",
+    appId: "1:1066975642179:web:29ff41291ca9b27a740af6",
+    measurementId: "G-KLDD4T97MG"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="book.js"></script>
+<script src="BookNav.js"></script>
+<!-- <a href="https://www.freepik.com/free-photos-vectors/abstract">Abstract vector created by pch.vector - www.freepik.com</a> -->
+</body>
+
+</html>
