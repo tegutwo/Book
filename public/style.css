@@ -407,7 +407,7 @@ form {
       width: 60%; } }
   @media (max-width: 37.5em) {
     .contacts_form {
-      width: 70%; } }
+      width: 100%; } }
 
 .contacts_input {
   display: block;

@@ -15,7 +15,7 @@
             width: 60%;
         }
         @include respond(phone){
-            width: 70%;
+            width: 100%;
         }
     }
     &_input{
