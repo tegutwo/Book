@@ -86,6 +86,8 @@
             DOW = gDOW;
             console.log()
             let ob = JSON.parse(this.title);
+            let  fInput = document.querySelector("input#date");
+            fInput.focus();
             // db.child(months[ob.month]).child(this.innerHTML).child("Morning").set("true");
         }
         
@@ -210,7 +212,6 @@
         function formatDayInput(DayOfWeek,nDay,nTime){
 
         let dayInput = document.querySelector("input#date");
-        dayInput.inputMode = "none";
         console.dir(dayInput);
         dayInput.value = `${DayOfWeek}  ${nDay} / ${nTime}`;
         }  

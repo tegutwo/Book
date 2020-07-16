@@ -392,7 +392,7 @@ form {
 
 .contacts_container {
   background-image: linear-gradient(120.5deg, rgba(195, 7, 63, 0.8) 10%, #950740 10% 90%, rgba(195, 7, 63, 0.8) 90%);
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
