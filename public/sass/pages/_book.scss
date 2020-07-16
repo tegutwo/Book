@@ -9,7 +9,7 @@
   text-transform: uppercase;
   color: #000000;
   @include respond(tab-port){
-   font-size: 1.6rem;
+   font-size: 1.8rem;
 }
 }
 #date:focus{
@@ -65,7 +65,6 @@ color: #c3073F;
 }
 .dialog_listItem{
   list-style: none;
-  text-transform: uppercase;
   padding:1rem 2rem;
   text-align: center;
   letter-spacing: 2px;

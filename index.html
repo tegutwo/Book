@@ -6,9 +6,38 @@
         <link rel="stylesheet" type="text/css" href="public/style.css">
         <link rel="stylesheet" type="text/css" href="layout.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/1f7b189a72.js" crossorigin="anonymous"></script>
     </head>
 <body>
-    <section id="Hair" class="">
+</section>
+<section id="contacts" class="contacts ">
+    <div class="page_header">
+        <h1>Personal Information   
+            <!-- <span class="index index--closed">Closed</span> <span class="index index--open">Open</span> -->
+        </h1>
+    <div class="contacts_container">
+
+        <form action="#" method="post" class="contacts_form">
+            <input type="text" name="FullName" id="FullName"  class="contacts_input" placeholder="Full Name *" autofocus required minlength="3" maxlength="30">
+            <label for="FullName" class="contacts_label">Full Name</label>
+            <datalist id="phone">
+                <option value="+254">+254 </option>
+            </datalist>
+            <input type="tel" name="Number" id="Number" class="contacts_input"   placeholder="Phone Number:* " required  minlength="10" maxlength="15" list="phone">
+            <label for="Number" class="contacts_label"  >Number</label>
+            <input type="email" name="Email" id="Email" class="contacts_input" placeholder="Email" required>
+            <label for="Email" class="contacts_label">Email</label>
+            <input type="text" name="county" placeholder="Nairobi" id="county" class="contacts_input" readonly disabled>
+            <label for="county" class="contacts_label" style=" letter-spacing: 1px; color: white !important; opacity: 1 !important; position: relative; top: 1rem;">We currently only operate within Nairobi Kenya</label>
+        </form>
+        <div class="buttons">
+            <a href="#" class="btn btn_contact--back">Back</a> <a href="#" class="btn btn_contact--next">Next</a>
+        </div>
+        
+    </div>
+    
+</section>
+    <section id="Hair" class="hide">
         <div class="page_header">
             <h1>What Hair Would You Like?    
                 <!-- <span class="index index--closed">Closed</span> <span class="index index--open">Open</span> -->
@@ -182,18 +211,7 @@
         </div>
         
         
-    </section>
-    <section id="contacts" class="contacts hide">
-        <form action="#" method="post" class="contacts_form">
-            <label for="FullName" class="contacts_label">Full Name</label>
-            <input type="text" name="FullName" id="FullName"  class="contacts_input" autofocus>
-            <label for="Number" class="contacts_label">Number</label>
-            <input type="tel" name="Number" id="Number" class="contacts_input" >
-            <label for="Email" class="contacts_label">Email</label>
-            <input type="email" name="Email" id="Email" class="contacts_input" >
-            <a href="#" class="btn btn_dialog btn_dialog--confirm">Next</a>
-        </form>
-    </section>
+   
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
 

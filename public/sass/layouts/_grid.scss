@@ -59,9 +59,17 @@
             float: none;
         }
     }
+    &:last-child{
+        @include respond(tab-port){
+            margin-bottom: 6rem;
+        }
+        @include respond(phone){
+            margin-bottom: 6rem;
+        }
+      
+    }
     @include respond(tab-port){
         width: 100% !important;
-        
         float: none;
     }
 }

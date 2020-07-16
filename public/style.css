@@ -146,7 +146,7 @@ form {
 .btn:link {
   display: inline-block;
   text-decoration: none;
-  padding: 1rem 1rem;
+  padding: .5rem 1rem;
   border: 2px solid transparent;
   border-radius: 1rem .2rem 1rem;
   background-color: #c3073F;
@@ -155,8 +155,7 @@ form {
   transition: all .2s ease-out; }
 
 .btn:active {
-  color: #950740;
-  opacity: 0; }
+  color: #950740; }
 
 .btn:hover {
   transform: translateY(-0.3rem); }
@@ -279,6 +278,12 @@ form {
         margin-right: 0 !important;
         float: none; } }
   @media (max-width: 56.25em) {
+    [class^="col-"]:last-child {
+      margin-bottom: 6rem; } }
+  @media (max-width: 37.5em) {
+    [class^="col-"]:last-child {
+      margin-bottom: 6rem; } }
+  @media (max-width: 56.25em) {
     [class^="col-"] {
       width: 100% !important;
       float: none; } }
@@ -325,7 +330,7 @@ form {
   color: #000000; }
   @media (max-width: 56.25em) {
     #date {
-      font-size: 1.6rem; } }
+      font-size: 1.8rem; } }
 
 #date:focus {
   outline-color: #950740; }
@@ -375,7 +380,6 @@ form {
 
 .dialog_listItem {
   list-style: none;
-  text-transform: uppercase;
   padding: 1rem 2rem;
   text-align: center;
   letter-spacing: 2px;
@@ -386,14 +390,52 @@ form {
 .dialog_listItem:not(:first-child) {
   margin-top: 1rem; }
 
-.contacts_form {
+.contacts_container {
+  background-image: linear-gradient(120.5deg, rgba(195, 7, 63, 0.8) 10%, #950740 10% 90%, rgba(195, 7, 63, 0.8) 90%);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -40%);
+  width: 60%;
+  padding: 4rem 2rem; }
+
+.contacts_form {
+  width: 50%;
+  text-transform: none; }
+  @media (max-width: 56.25em) {
+    .contacts_form {
+      width: 60%; } }
+  @media (max-width: 37.5em) {
+    .contacts_form {
+      width: 70%; } }
 
 .contacts_input {
-  display: block; }
+  display: block;
+  padding: 1.5rem 2rem;
+  border: 3px solid transparent;
+  background-color: white;
+  width: 100%; }
+  .contacts_input:not(:first-child) {
+    margin-top: .3rem; }
+  .contacts_input:focus {
+    outline: none;
+    border-bottom: 3px solid #03fff2; }
+  .contacts_input:placeholder-shown + .contacts_label {
+    position: relative;
+    opacity: 0;
+    bottom: 3rem; }
+  .contacts_input:focus:invalid {
+    border-bottom: 3px solid orangered; }
 
 .contacts_label {
-  display: block; }
+  font-size: 1.3rem;
+  color: white;
+  opacity: 2;
+  transition: all .1s; }
+
+.contacts_input:focus .contacts_label:placeholder-shown {
+  top: 7.8rem;
+  left: 0; }
+
+.buttons {
+  margin-top: 3rem; }
