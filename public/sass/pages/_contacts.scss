@@ -6,13 +6,19 @@
         left: 50%;
         transform: translate(-50%,-40%);
         width: 60%;
+        @include respond (tab-port){
+            width: 70%;
+        }
+        @include respond(phone){
+            width: 85%;
+        }
       padding: 4rem 2rem;
     }
     &_form{
         width: 50%;
         text-transform: none;
         @include respond (tab-port){
-            width: 60%;
+            width: 70%;
         }
         @include respond(phone){
             width: 100%;
