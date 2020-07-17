@@ -20,7 +20,7 @@ html {
       letter-spacing: .05; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 43.75%;
+      font-size: 50%;
       letter-spacing: .0; } }
   @media (min-width: 112.5em) {
     html {
