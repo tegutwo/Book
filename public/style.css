@@ -370,7 +370,12 @@ form {
   position: relative;
   background-image: url("book.png");
   background-repeat: no-repeat;
-  background-size: contain; }
+  background-size: contain; 
+  @media (max-width: 37.5em) {
+    .dialog{
+      width:95%;
+ } }
+}
 
 .dialog {
   position: absolute;
@@ -379,7 +384,7 @@ form {
   transform: translate(-50%, -50%);
      @media (max-width: 37.5em) {
     .dialog{
-      width:95%;
+      width:85%;
  } }
  }
 
