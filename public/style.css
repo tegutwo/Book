@@ -379,7 +379,7 @@ form {
   transform: translate(-50%, -50%);
      @media (max-width: 37.5em) {
     .dialog{
-      width:80%;
+      width:95%;
  } }
  }
 
