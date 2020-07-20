@@ -193,14 +193,15 @@
         }
     }
     function updateInput(){
+        time = this.id;
         if(DOW.date != null){
-            time = this.id;
-            formatDayInput(DOW.date,DOW.nDAY,this.id);
+            
+            formatDayInput(DOW.date,DOW.nDAY,time);
             DayChoice = DOW.nDAY;
         }
         else{
-            time = this.id;
-            formatDayInput("Pick a date","",this.id);
+         
+            formatDayInput("Pick a date","",time);
         }
         
     }

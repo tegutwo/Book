@@ -55,12 +55,24 @@ color: #c3073F;
   background-image: url("book.png");
   background-repeat: no-repeat;
   background-size: contain;
+  @include respond(tab-port){
+    width: 100%;
+  }
+  @include respond(phone){
+    width: 100%;
+  }
 }
 .dialog{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  @include respond(tab-port){
+    width: 80%;
+  }
+  @include respond(phone){
+    width: 90%;
+  }
   
 }
 .dialog_listItem{
@@ -70,7 +82,13 @@ color: #c3073F;
   letter-spacing: 2px;
   color: #ffffff;
   /* border-bottom: 2px solid #c3073F ; */
-  background-image: linear-gradient(130deg ,#c3073F 0% 95%, #950740 95%)
+  background-image: linear-gradient(130deg ,#c3073F 0% 95%, #950740 95%);
+  @include respond(tab-port){
+    width: 100%;
+  }
+  @include respond(phone){
+    width: 100%;
+  }
 }
 .dialog_listItem:not(:first-child){
   margin-top: 1rem;

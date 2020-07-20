@@ -20,10 +20,11 @@ function dayDetails(day,month,year,time){
     this.year = year;
     this.time = time;
 }
-function clientDetails(name,number,email){
+function clientDetails(name,number,email,location){
         this.name = name;
         this.number = number;
         this.email = email;
+        this.location = location;
 }
 bButtonBack.addEventListener("click",goToHair);
 function goToHair(event){
@@ -48,7 +49,8 @@ function goToHair(event){
             console.log(clientNumber);
             let clientEmail = document.querySelector("input#Email");
             console.log(clientEmail);
-            client = new clientDetails(clientName.value,clientNumber.value,clientEmail.value);
+            let clientLocation = document.querySelector("input#location");
+            client = new clientDetails(clientName.value,clientNumber.value,clientEmail.value,clientLocation.value);
             console.log(client);
         }
        
@@ -100,7 +102,7 @@ finish.addEventListener("click",goToFinish);
     sBook.classList.add("hide");
     let dialogBox = document.querySelector("a.btn_dialog--Back");
     let list = document.createElement("ul");
-    let dateArray = ["Name: " +client.name+" "+"Number: "+ client.number + " " + "Email: " + client.email ,"Day:"+" "+dateChoice.day + " "+"Month:"+" "+dateChoice.month+" "+"Time:"+" "+ dateChoice.time];
+    let dateArray = ["Name: " +client.name+", "+"Number: "+ client.number + " " + "Email: " + client.email + ", " +"Location: " + client.location ,"Day:"+" "+dateChoice.day + " "+"Month:"+" "+dateChoice.month+" "+"Time:"+" "+ dateChoice.time];
     let HairArray = ["Style:"+" "+hairChoice.style + ", "+"Length:"+" "+hairChoice.Length + ", " + "Color:"+" "+ hairChoice.color];
     console.log(dateArray);
         for(let i = 0; i<dateArray.length;i++){
@@ -138,6 +140,7 @@ finish.addEventListener("click",goToFinish);
       let name =document.querySelector("input#FullName");
         let number = document.querySelector("input#Number");
         let email = document.querySelector("input#Email");
+        let location = document.querySelector("input#location");
         const re = /.+\@+.+\.com/g;
        console.log(re.test(email.value));
      
@@ -147,7 +150,7 @@ finish.addEventListener("click",goToFinish);
            name.focus() ;
            return false;
     }
-    else if( number.value == "" || number.value.length <=10 ||  number.value.length >15 ) {
+    else if( number.value == "" || number.value.length <10 ||  number.value.length >15 ) {
         console.log("Validate 3");
         alert( "Please provide your number" );
            number.focus() ;
@@ -159,9 +162,192 @@ finish.addEventListener("click",goToFinish);
            number.focus() ;
            return false;
     }
+    else if (location.value == ""){
+        console.log("Validate 4");
+        alert("Please Enter a Location");
+           number.focus() ;
+           return false;
+    }
     // alert( "Please provide your name!" );
     //    document.querySelector("input#FullName").focus() ;
     //    return false;
     return( true );
  }
+ /******** Price Display and Change Functionality********** */
+ let hStyle =document.querySelector("select#style").addEventListener("click",getPrice);
+ let hLength = document.querySelector("select#length").addEventListener("click",getPrice);
+  function getPrice(){
+    let midBack = document.querySelector("option[value = 'Mid-Back']");
+    let hStyle =document.querySelector("select#style");
+    let hLength = document.querySelector("select#length");
+      let price = document.querySelector("p#price");
+      price.style.color = "Green";
+    if(hStyle != "Bohemian Goddess Locs" ){
+       midBack.style.display = "inherit";
+    }
+        if(hStyle.value == "Faux Locs"){
+            if(hLength.value == "Short"){
+                price.innerHTML = " Price: 2700/=" ;
+            }
+            else if(hLength.value == "Mid-Back"){
+                price.innerHTML = " Price: 3000/=";
+            }
+            else if(hLength.value == "Long"){
+                price.innerHTML = " Price: 3200/=";
+            }
 
+        }
+        else if(hStyle.value == "Faux Goddess Locs"){
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Mid-Back"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+        }
+        else if(hStyle.value == "Bohemian Locs"){
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Mid-Back"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+        }
+        else if(hStyle.value == "Bohemian Goddess Locs"){
+
+            if(midBack.style.display != "none"){
+                midBack.style.display = "none";
+                if(hLength.value == "Mid-Back"){
+                    console.dir(hLength);
+                hLength.value = hLength.options[0].value;
+                }
+            }
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+        }
+        else if(hStyle.value == "super-dread"){
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Mid-Back"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+        }
+        else if(hStyle.value == "kinky-wavy"){
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Mid-Back"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+        }
+        else if(hStyle.value == "Reggae Locs"){
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Mid-Back"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+
+        }
+        else if(hStyle.value == "Distress Locs"){
+            if(hLength.value == "short"){
+
+            }
+            else if(hLength.value == "Mid-Back"){
+
+            }
+            else if(hLength.value == "Long"){
+
+            }
+
+        }
+        
+  }
+  
+
+//   function CheckLength(length){
+//     if(hLength.value == "short"){
+//         return "short";
+//     }
+//     else if(hLength.value == "Mid-Back"){
+//         return "Mid-Back";
+//     }
+//     else if(hLength.value == "Long"){
+//         return "Long";
+//     }
+//     else{
+//         return false;
+//     }
+//   }
+
+/*TODO: Refactor: create function removeOption(select,option){if(option.style.display != "none"){
+                option.style.display = "none";
+                if(select.value == "Mid-Back"){
+                    let arreay =select.option;
+                    let choice;
+                    for(i = 0; i<array.length; i++){
+                        if(array[i].style.display != "none"){
+                            choice = i;
+                            break ;
+                        }
+                    }
+                hLength.value = hLength.options[choice].value;
+                }
+            }}*/
+
+            //FireBase
+            // let database = firebase.database();
+            // let months = ["January","February","March","April","May","June","July","August","September","October","Novemeber","December"];
+            // function initialiseDataBase(currentYear){
+            //     if(){
+
+
+            //}
+            //     let year = new Date().getFullYear();
+            //         for(let i=0;i<months.length;i++){
+            //             db.child(months[i]).push();
+            //         }
+            // }
+            // function writeBookingData(year,month,day,time){
+
+            // }
+            // function readBookingData(currentYear,currentMonth){
+
+            // }
+
+
+//                 var db = firebase.database().ref().child("2020");
+//  let year = new Date().getFullYear();
+//   for(let i=0;i<months.length;i++){
+//       db.child(months[i]).push();
+//   }
+//   db.child("January").child(1).child("Morning").set("false");
+//   db.child("January").child(1).child("Evening").set("false");
+    function writeBookingData(year,month, day, time, details) {
+        firebase.database().ref('Year' + year).set({
+        month: month,
+        day: day,
+        time: time,
+        details: details
+        });
+    }

@@ -10,7 +10,7 @@
     </head>
 <body>
 </section>
-<section id="contacts" class="contacts ">
+<section id="contacts" class="contacts">
     <div class="page_header">
         <h1>Personal Information   
             <!-- <span class="index index--closed">Closed</span> <span class="index index--open">Open</span> -->
@@ -27,8 +27,8 @@
             <label for="Number" class="contacts_label"  >Number</label>
             <input type="email" name="Email" id="Email" class="contacts_input" placeholder="Email" required>
             <label for="Email" class="contacts_label">Email</label>
-            <input type="text" name="county" placeholder="Nairobi" id="county" class="contacts_input" readonly disabled>
-            <label for="county" class="contacts_label" style=" letter-spacing: 1px; color: white !important; opacity: 1 !important; position: relative; top: 1rem;">We currently only operate within Nairobi Kenya</label>
+            <input type="text" name="county" placeholder="Location:eg Langata/Deliverance" id="location" class="contacts_input">
+            <label for="location" class="contacts_label" style=" letter-spacing: 1px; color: white !important; opacity: 1 !important; position: relative; top: 1rem;">We currently only operate within Nairobi Kenya</label>
         </form>
         <div class="buttons">
             <a href="#" class="btn btn_contact--back">Back</a> <a href="#" class="btn btn_contact--next">Next</a>
@@ -95,10 +95,13 @@
             <div class="col-1-of-3">
                 <div class="hair_list--form"></div>
             <form action="#" method="POST" class="Hair_form">
+                <p id="price">Price Goes Here</p>
                 <label for="style" class="select_label">Style</label>
                <select name="styles" id="style" class="select">
                    <option value="Faux Locs">Faux Locs</option>
-                   <option value="Bohemian Locs">Bohemian Locs</option>
+                   <option value="Faux Goddess Locs">Faux Goddess Locs</option>
+                   <option value="Bohemian Locs">Bohemian  Locs</option>
+                   <option value="Bohemian Goddess Locs">Bohemian Goddess Locs</option>
                    <option value="super-dread">super-dread</option>
                    <option value="kinky-wavy">kinky-wavy</option>
                    <option value="Reggae Locs">Reggae Locs</option>
@@ -112,9 +115,18 @@
                </select>
                <label for="Color" class="select_label">Color</label>
                <select name="Color" id="Color" class="select">
-                   <option value="Black #1">Black #1</option>
-                   <option value="Black #2">Black #2</option>
-                   <option value="Brown">Brown</option>
+                   <option value="#1">#1</option>
+                   <option value="#2">#2</option>
+                   <option value="#27">#27</option>
+                   <option value="#30">#30</option>
+                   <option value="#33">#33</option>
+                   <option value="#350">#350</option>
+                   <option value="#900">#900</option>
+                   <option value="#1/27">#1/27</option>
+                   <option value="#1/30">#1/30</option>
+                   <option value="#1/33">#1/33</option>
+                   <option value="#1/350">#1/350</option>
+                   <option value="#1/900">#1/900</option>
                </select>
                <!-- <label for="Color" class="select_label">Color:</label>
                <input type="text" id="Color" class="select"> -->
@@ -172,7 +184,7 @@
         
          <div class="input_holder">
             <input class="radio" id= "Evening" type="radio" name="time" >
-            <label class="radio_labels" for="Evening"><span class="radio_btn">&nbsp;</span> Evening</label>
+            <label class="radio_labels" for="Evening"><span class="radio_btn">&nbsp;</span> Afternoon</label>
          </div>
         
         </div>

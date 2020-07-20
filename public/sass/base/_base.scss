@@ -15,14 +15,14 @@ html{
  
   @include respond(tab-land){
     font-size: 56.25%;// 1rem = 9px; 9/16
-    letter-spacing: .05;
+    letter-spacing: .1;
   }
   @include respond(tab-port){
     font-size: 50%;// 1rem = 8px; 8/16
-    letter-spacing: .05;
+    letter-spacing: .1;
   }
   @include respond(phone){
-    font-size: 43.75%;// 1rem = 7px; 8/16
+    font-size: 50%;// 1rem = 7px; 8/16
     letter-spacing: .0;
   }
   @include respond(big-desktop){
