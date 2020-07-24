@@ -283,71 +283,40 @@ finish.addEventListener("click",goToFinish);
         }
         
   }
-  
+  getPrice();
 
-//   function CheckLength(length){
-//     if(hLength.value == "short"){
-//         return "short";
-//     }
-//     else if(hLength.value == "Mid-Back"){
-//         return "Mid-Back";
-//     }
-//     else if(hLength.value == "Long"){
-//         return "Long";
-//     }
-//     else{
-//         return false;
-//     }
-//   }
 
-/*TODO: Refactor: create function removeOption(select,option){if(option.style.display != "none"){
-                option.style.display = "none";
-                if(select.value == "Mid-Back"){
-                    let arreay =select.option;
-                    let choice;
-                    for(i = 0; i<array.length; i++){
-                        if(array[i].style.display != "none"){
-                            choice = i;
-                            break ;
-                        }
-                    }
-                hLength.value = hLength.options[choice].value;
+
+
+            let confirm = document.querySelector("a.btn_dialog--confirm");
+            confirm.addEventListener('click',writeBookingData);
+            let fDatabase= firebase.database().ref('BOOKER');
+            function writeBookingData(userId,year,month,day,time,details){
+                userId = "Tegutwo Culture";
+                year = dateChoice.year;
+                month = dateChoice.month;
+                day = dateChoice.day;
+                time = dateChoice.time;
+                details = {
+                    client: JSON.stringify(client),
+                    hair: JSON.stringify(hairChoice)
                 }
-            }}*/
 
-            //FireBase
-            // let database = firebase.database();
-            // let months = ["January","February","March","April","May","June","July","August","September","October","Novemeber","December"];
-            // function initialiseDataBase(currentYear){
-            //     if(){
-
-
-            //}
-            //     let year = new Date().getFullYear();
-            //         for(let i=0;i<months.length;i++){
-            //             db.child(months[i]).push();
-            //         }
-            // }
-            // function writeBookingData(year,month,day,time){
-
-            // }
-            // function readBookingData(currentYear,currentMonth){
-
-            // }
-
-
-//                 var db = firebase.database().ref().child("2020");
-//  let year = new Date().getFullYear();
-//   for(let i=0;i<months.length;i++){
-//       db.child(months[i]).push();
-//   }
-//   db.child("January").child(1).child("Morning").set("false");
-//   db.child("January").child(1).child("Evening").set("false");
-    function writeBookingData(year,month, day, time, details) {
-        firebase.database().ref('Year' + year).set({
-        month: month,
-        day: day,
-        time: time,
-        details: details
-        });
-    }
+                firebase.database().ref('BOOKER/'+ userId +"/"+year+"/"+month+"/"+day+"/"+time).set({
+                    details: details
+                  });
+                
+                }
+                // let backs = document.querySelector("a.btn_dialog--Back");
+                // backs.addEventListener("click",readBookingData);
+            function readBookingData(userId,year,month){
+                userId = "Tegutwo Culture";
+                year = year;
+                month = month;
+                let ref = `BOOKER/${userId}/${year}/${month}/`;
+                console.log(ref);
+                let data= firebase.database().ref(ref);
+                data.on("value",(snapshot)=>{
+                    return snapshot.val();
+                })
+            }

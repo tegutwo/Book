@@ -42,25 +42,55 @@
                     
                     cell.appendChild(text);
                     cell.classList.add("column--cells");
-                    
-                    if(date === currentDate){
+                    cell.addEventListener("click", setDate);
+                    let monthCheck = new Date().getMonth();
+                 
+                    if(date == currentDate){
                         cell.classList.add("current_date");
                     }
-                    if (date < currentDate){
-                        cell.classList.add("past_date");
+                    if ( month == monthCheck){
+                        if( date < currentDate){
+                            cell.classList.add("past_date");
+                        cell.removeEventListener("click", setDate);
+                        cell.style.textDecoration = "line-through";
+                        }
+                        
+                        // cell.style.textDecoration = "line-through";
+                       
                     }
                     if(date >= currentDate){
-
+                             
+                                checkIfullyBooked(date,cell);
                     }
                     tr.appendChild(cell);
                     date++;
                 }
             }
             body.appendChild(tr);
+           
         }
 
-    
+       
     } 
+    function checkIfullyBooked(day,td){
+        userId = "Tegutwo Culture";
+    year = currentYear;
+    month = months[currentMonth];
+    console.log(month + "Alvin");
+    let ref = `BOOKER/${userId}/${year}/${month}/${day}`;
+    db = firebase.database().ref(ref).orderByChild("3");
+    let data= firebase.database().ref(ref);
+    data.limitToLast(30).on("value",async function (snapshot){
+     let dbCheck = await snapshot.exists();
+        if(dbCheck){
+        let dbData = await snapshot.val();
+            if(Object.keys(dbData).length >= 2){
+               td.removeEventListener("click",setDate);
+                td.style.textDecoration = "line-through";
+            }
+        }
+    });
+    }
     //Calendar Functionality
 //     var db = firebase.database().ref().child("2020");
 //  let year = new Date().getFullYear();
@@ -84,7 +114,6 @@
             formatDayInput(getDayOfWeek(this.innerHTML),this.innerHTML,time);
             let gDOW = new booked(getDayOfWeek(this.innerHTML),this.innerHTML);
             DOW = gDOW;
-            console.log()
             let ob = JSON.parse(this.title);
             let  fInput = document.querySelector("input#date");
             fInput.focus();
@@ -108,67 +137,133 @@
                     }
                 }
         }
-        function setBookOptions(dayToCheck){
+      async function setBookOptions(dayToCheck){
+       
+            let year = document.querySelector("span.span_year");
             let month = document.querySelector("span.span_month");
-
-            if(isBooked(dayToCheck,month.innerHTML)){
-                let bData = controlBooking(dayToCheck).htmlFor;
-                let Morning = document.querySelector("label[for='Morning']");
-                let Evening = document.querySelector("label[for ='Evening']");
-                let MorningChecked = document.querySelector("input#Morning");
-                let EveningChecked = document.querySelector("input#Evening");
-            if( bData =="Morning"){
-                EveningChecked.checked = true;
-                Morning.classList.add("hide");
-                if(Evening.classList.contains("hide")){
+          await isBooked(dayToCheck,month.innerHTML);
+            // if(Booked){
+            //     let bData = await isBooked(dayToCheck,month.innerHTML);
+            //     let Morning = document.querySelector("label[for='Morning']");
+            //     let Evening = document.querySelector("label[for ='Evening']");
+            //     let MorningChecked = document.querySelector("input#Morning");
+            //     let EveningChecked = document.querySelector("input#Evening");
+            // if( bData =="Morning"){
+            //     EveningChecked.checked = true;
+            //     Morning.classList.add("hide");
+            //     if(Evening.classList.contains("hide")){
+            //             Evening.classList.remove("hide");
+            //         }
+            //     if(Morning.classList.contains("show")){
+            //         Morning.classList.remove("show");
+            //     }
+            
+            //     time = getTime();
+            // }
+            // else if(bData =="Evening"){
+            //     MorningChecked.checked = true;
+            //    Evening.classList.add("hide");
+            //    if(Morning.classList.contains("hide")){
+            //     Morning.classList.remove("hide");
+            //         }
+            //         if(Evening.classList.contains("show")){
+            //             Evening.classList.remove("show");
+            //         }
+            // time = getTime();
+            // }
+            // else{
+            //   time = getTime();
+            // }
+            // }
+            // else{
+            //     let Morning = document.querySelector("label[for='Morning']");
+            //     let Evening = document.querySelector("label[for ='Evening']");
+            //     let MorningChecked = document.querySelector("input#Morning");
+            //     MorningChecked.checked = true;
+            //     Morning.classList.add("show");
+            //     Evening.classList.add("show");
+            //     if(Morning.classList.contains("hide")){
+            //         Morning.classList.remove("hide");
+            //     }
+            //     else if(Evening.classList.contains("hide")){
+            //         Evening.classList.remove("hide");
+            //     }
+            //     time = getTime();
+            // }
+        }
+       function isBooked(day, month){
+            let time;
+            userId = "Tegutwo Culture";
+            year = currentYear;
+            month = months[currentMonth];
+            let ref = `BOOKER/${userId}/${year}/${month}/${day}`;
+            let dataBase =  firebase.database().ref(ref);
+             dataBase.on("value",(snapshot,)=>{
+                let datacheck =  snapshot.exists();
+                let data =  snapshot.val();
+                if(datacheck){
+                    for( let ob in data){
+                        if(ob == "Evening"){
+                            time = "Evening";
+                        }
+                        else{
+                             time = "Morning";
+                        }
+                    
+                    }
+                    if(time){
+                        let bData = time ;
+                        let Morning = document.querySelector("label[for='Morning']");
+                        let Evening = document.querySelector("label[for ='Evening']");
+                        let MorningChecked = document.querySelector("input#Morning");
+                        let EveningChecked = document.querySelector("input#Evening");
+                    if( bData =="Morning"){
+                        EveningChecked.checked = true;
+                        Morning.classList.add("hide");
+                        if(Evening.classList.contains("hide")){
+                                Evening.classList.remove("hide");
+                            }
+                        if(Morning.classList.contains("show")){
+                            Morning.classList.remove("show");
+                        }
+                    
+                        time = getTime();
+                    }
+                    else if(bData =="Evening"){
+                        MorningChecked.checked = true;
+                       Evening.classList.add("hide");
+                       if(Morning.classList.contains("hide")){
+                        Morning.classList.remove("hide");
+                            }
+                            if(Evening.classList.contains("show")){
+                                Evening.classList.remove("show");
+                            }
+                    time = getTime();
+                    }
+                    else{
+                      time = getTime();
+                    }
+                    }
+                   
+                }
+                else{
+                    let Morning = document.querySelector("label[for='Morning']");
+                    let Evening = document.querySelector("label[for ='Evening']");
+                    let MorningChecked = document.querySelector("input#Morning");
+                    MorningChecked.checked = true;
+                    Morning.classList.add("show");
+                    Evening.classList.add("show");
+                    if(Morning.classList.contains("hide")){
+                        Morning.classList.remove("hide");
+                    }
+                    else if(Evening.classList.contains("hide")){
                         Evening.classList.remove("hide");
                     }
-                if(Morning.classList.contains("show")){
-                    Morning.classList.remove("show");
+                    time = getTime();
                 }
-            
-                time = getTime();
-            }
-            else if(bData =="Evening"){
-                MorningChecked.checked = true;
-               Evening.classList.add("hide");
-               if(Morning.classList.contains("hide")){
-                Morning.classList.remove("hide");
-                    }
-                    if(Evening.classList.contains("show")){
-                        Evening.classList.remove("show");
-                    }
-            time = getTime();
-            }
-            else{
-              time = getTime();
-            }
-            }
-            else{
-                let Morning = document.querySelector("label[for='Morning']");
-                let Evening = document.querySelector("label[for ='Evening']");
-                let MorningChecked = document.querySelector("input#Morning");
-                MorningChecked.checked = true;
-                Morning.classList.add("show");
-                Evening.classList.add("show");
-                if(Morning.classList.contains("hide")){
-                    Morning.classList.remove("hide");
-                }
-                else if(Evening.classList.contains("hide")){
-                    Evening.classList.remove("hide");
-                }
-                time = getTime();
-            }
-        }
-        function isBooked(day, month){
-            console.log(month);
-            for( i= 0;i<dataBase.length;i++){
-                let oDay = JSON.parse(dataBase[i]);
-                console.log(months[oDay.month]);
-                if(day == oDay.day && month == months[oDay.month]){
-                    return true;
-                }
-            }
+            });
+
+         return time;
         }
        
        
@@ -177,10 +272,6 @@
         year.innerHTML= currentYear;
         let Cmonth = document.querySelector("span.span_month");  
         Cmonth.innerHTML = months[currentMonth];
-        let days = document.querySelectorAll("td.column--cells");
-        for(let i=0;i<days.length; i++){
-            days[i].addEventListener("click", setDate);
-        }
     }
    
 
@@ -213,7 +304,6 @@
         function formatDayInput(DayOfWeek,nDay,nTime){
 
         let dayInput = document.querySelector("input#date");
-        console.dir(dayInput);
         dayInput.value = `${DayOfWeek}  ${nDay} / ${nTime}`;
         }  
         function getTime(){
@@ -293,8 +383,26 @@
 //       bDays.push(JSON.stringify(placer));
 //   }
 //   localStorage.setItem("Booked Days",JSON.stringify(bDays));
-
+let db = "";
+// function getData(data){
+//     db = data;
+    
+// }
+// function readBookingData(userId,year,month){
+//     userId = "Tegutwo Culture";
+//     year = year;
+//     month = month;
+//     let ref = `BOOKER/${userId}/${year}/${month}/`;
+//     db = firebase.database().ref(ref).orderByChild("3");
+//     let data= firebase.database().ref(ref);
+//     data.limitToLast(30).on("value",async function (snapshot){
+//       db = await snapshot.val();
+//       console.log(db);
+//     });
+// }
 DisplayCalendar(currentMonth,currentYear);
  populateForm(currentYear,currentMonth);
  InputListener();
+  readBookingData("Tegutwo Culture",currentYear,months[currentMonth]);
+
  
