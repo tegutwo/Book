@@ -18,15 +18,23 @@
     <div class="contacts_container">
 
         <form action="#" method="post" class="contacts_form">
-            <input type="text" name="FullName" id="FullName"  class="contacts_input" placeholder="Full Name *" autofocus required minlength="3" maxlength="30">
+            <div style="position: relative;" class="input_div">
+                <input type="text" name="FullName" id="FullName"  class="contacts_input" placeholder="Full Name *" autofocus required minlength="3" maxlength="30">
             <label for="FullName" class="contacts_label">Full Name</label>
+            </div>
+            
             <datalist id="phone">
                 <option value="+254">+254 </option>
             </datalist>
-            <input type="tel" name="Number" id="Number" class="contacts_input"   placeholder="Phone Number:* " required  minlength="10" maxlength="15" list="phone">
+            <div style="position: relative;" class="input_div">
+                <input type="tel" name="Number" id="Number" class="contacts_input"   placeholder="Phone Number:* " required  minlength="10" maxlength="15" list="phone">
             <label for="Number" class="contacts_label"  >Number</label>
-            <input type="email" name="Email" id="Email" class="contacts_input" placeholder="Email" required>
+            </div>
+            <div class="input_div">
+                <input type="email" name="Email" id="Email" class="contacts_input" placeholder="Email" required>
             <label for="Email" class="contacts_label">Email</label>
+            </div>
+            
             <input type="text" name="county" placeholder="Location:eg Langata/Deliverance" id="location" class="contacts_input">
             <label for="location" class="contacts_label" style=" letter-spacing: 1px; color: white !important; opacity: 1 !important; position: relative; top: 1rem;">We currently only operate within Nairobi Kenya</label>
         </form>

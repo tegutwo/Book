@@ -50,11 +50,15 @@
     }
     
     &_label{
-       
+       position: absolute;
+       left: 0;
+       top: -30% ;
         font-size: 1.3rem;
         color: white;
         opacity: 2;
+        display: block;
         transition: all .1s ;
+        
 
     }
     
@@ -65,4 +69,8 @@
 }
 .buttons{
     margin-top: 3rem;
+}
+.input_div{
+    position: relative;
+    margin-bottom: 1.8rem;
 }

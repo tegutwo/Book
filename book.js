@@ -192,7 +192,7 @@
             // }
         }
        function isBooked(day, month){
-            let time;
+            let timeS;
             userId = "Tegutwo Culture";
             year = currentYear;
             month = months[currentMonth];
@@ -204,15 +204,15 @@
                 if(datacheck){
                     for( let ob in data){
                         if(ob == "Evening"){
-                            time = "Evening";
+                            timeS = "Evening";
                         }
                         else{
-                             time = "Morning";
+                             timeS = "Morning";
                         }
                     
                     }
                     if(time){
-                        let bData = time ;
+                        let bData = timeS ;
                         let Morning = document.querySelector("label[for='Morning']");
                         let Evening = document.querySelector("label[for ='Evening']");
                         let MorningChecked = document.querySelector("input#Morning");
@@ -261,9 +261,18 @@
                     }
                     time = getTime();
                 }
+                if(DOW.date != null){
+            
+                    formatDayInput(DOW.date,DOW.nDAY,time);
+                    DayChoice = DOW.nDAY;
+                }
+                else{
+                 
+                    formatDayInput("Pick a date","",time);
+                }
             });
 
-         return time;
+         time = getTime();
         }
        
        
