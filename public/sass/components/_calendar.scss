@@ -1,109 +1,120 @@
-.BOOKER{
-    height: 100vh;
-    overflow: scroll;
+.BOOKER {
+  height: 100vh;
+  overflow: scroll;
 
-  }
-  .Booker_form{
+}
 
-    @include respond(tab-land){
+.Booker_form {
 
-    }
-    @include respond(tab-port){
-      padding: 2rem 5rem;
-      text-align: center;
-    }
-    @include respond(phone){
-     padding: 2rem 6rem;
-     text-align: center;
-    }
-  }
-  .page_header{
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #950740;
-    color: whitesmoke;
-  }
-  h1{
-    text-transform: uppercase;
-    font-size: 3rem;
-  }
-  .header_tertiary{
-    padding: 2rem 0;
-    text-align: center;
-    margin-bottom: 4rem;
-   
-  }
-  .span{
-    display: inline-block;
-    text-align: center;
-    width: 40%;
-    padding: 1rem;
-    text-transform: uppercase;
-    color: #c3073F;
-  }
-  .span_year{
-   
-  }
-  .span_month{
-  
-  }
-  #calendar{
-    margin-top: 8rem ;
-    letter-spacing: 2px;
-    vertical-align: middle;
-    font-size: 2.5rem;
-    @include respond(phone){
-      font-size: 2rem;
-    }
-  }
-  #calendar_body{
-   
-  }
-  tr{
-   padding: 4rem 5rem;
-   color: #c3073F;
-  }
-  td{
-   color: #4E4E50;
-  }
-  form{
-    text-transform: uppercase;
-  }
-  
-  .column--cells{
-   border: .5rem solid transparent;
-   cursor: pointer;
-   text-align: center;
-   padding: .5rem 2rem;
-   @include respond(phone){
-      padding: .5rem 1rem;
-   }
-  }
-  #table_header{
-    padding: 2rem 1rem;
-  }
-  .button_container{
+  @include respond(tab-land) {}
+
+  @include respond(tab-port) {
+    padding: 2rem 5rem;
     text-align: center;
   }
-  .month{
-    background-color: #c3073F;
-    display: inline-block;
-    margin: 0 auto;
-    margin: 1rem auto; 
-    cursor: pointer;
+
+  @include respond(phone) {
+    padding: 2rem 6rem;
+    text-align: center;
   }
-  .month--next{
-    clip-path: polygon(0% 0%,  100% 50%,  0% 100%);
+}
+
+.page_header {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: rgb(191,7,64);
+  // background-color: white;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header_tertiary {
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 4rem;
+
+}
+
+.span {
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+  padding: 1rem;
+  text-transform: uppercase;
+  color: #c3073F;
+}
+
+
+
+#calendar {
+  margin-top: 8rem;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  font-size: 2.5rem;
+
+  @include respond(phone) {
+    font-size: 2rem;
   }
-  .month--previous{
-    clip-path: polygon(0% 50%, 100% 0%, 100% 100%,  0% 50%);
+}
+
+tr {
+  padding: 4rem 5rem;
+  color: #c3073F;
+}
+
+td {
+  color: #4E4E50;
+}
+
+form {
+  text-transform: uppercase;
+}
+
+.column--cells {
+  border: .5rem solid transparent;
+  cursor: pointer;
+  text-align: center;
+  padding: .5rem 2rem;
+
+  @include respond(phone) {
+    padding: .5rem 1rem;
   }
-  .selected{
-  
-    border-radius:.5rem 2rem .5rem;
-    border: .5rem solid transparent;
-    background-color: #6F2232;
-    color: white;
-   
-  
-  }
+}
+
+#table_header {
+  padding: 2rem 1rem;
+}
+
+.button_container {
+  text-align: center;
+}
+
+.month {
+  background-color: #c3073F;
+  display: inline-block;
+  margin: 0 auto;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.month--next {
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+
+.month--previous {
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 50%);
+}
+
+.selected {
+
+  border-radius: .5rem 2rem .5rem;
+  border: .5rem solid transparent;
+  background-color: #6F2232;
+  color: white;
+
+
+}

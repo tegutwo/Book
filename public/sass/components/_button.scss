@@ -1,39 +1,46 @@
-.btn_layout--adjacent{
-    display: inline-block;
-    text-align: center;
-    padding: 1rem;
-    width: 45%;
-  }
-  .btn,
-  .btn:visited,
-  .btn:link{
-    display: inline-block;
-    text-decoration: none;
-    padding: .5rem 1rem;
-    border: 2px solid transparent;
-    border-radius: 1rem .2rem 1rem;
-    background-color: #c3073F;
-    color: white;
-    letter-spacing: 3px;
-    transition: all .2s ease-out;
-  }
-  .btn:active{
-    color: #950740;
-  }
-  .btn:hover{
-    transform: translateY(-.3rem);
-  }
-  .btn_dialog{
-    margin-top: 1rem;
-  }
-  .btn_dialog--Back{
-   float: left;
-   clear: left;
-  }
-  .btn_dialog--confirm{
+.btn_layout--adjacent {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem;
+  width: 45%;
+}
+
+.btn,
+.btn:visited,
+.btn:link {
+  display: inline-block;
+  text-decoration: none;
+  padding: .5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: .6rem;
+  background-color: #c3073F;
+  color: white;
+  letter-spacing: 2px;
+  transition: all .2s ease-out;
+}
+
+.btn:active {
+  color: #950740;
+}
+
+.btn:hover {
+  transform: translateY(-.3rem);
+}
+
+.btn_dialog {
+  margin-top: 1rem;
+}
+
+.btn_dialog--Back {
+  float: left;
+  clear: left;
+}
+
+.btn_dialog--confirm {
   float: right;
   clear: right;
-  }
-  .btn_next--hair{
-    margin-top: 7rem;
-  }
+}
+
+.btn_next--hair {
+  margin-top: 7rem;
+}
