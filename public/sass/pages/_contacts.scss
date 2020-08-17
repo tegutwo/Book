@@ -25,7 +25,8 @@
         }
 
         @include respond(phone) {
-            width: 65%;
+            height: 90vh;
+            width: 80%;
             padding: 6rem 2rem 2rem;
         }
         @include respond(big-desktop){
